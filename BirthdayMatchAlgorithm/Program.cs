@@ -8,9 +8,10 @@ namespace BirthdayMatchAlgorithm
 {
     class Program
     {
+        public static List<PersonModel> _persons = new List<PersonModel>();
+
         static void Main(string[] args)
         {
-            List<PersonModel> _persons = new List<PersonModel>();
 
             Console.WriteLine("Welcome to the Birthday Match Algorithm Program!\n" +
                 "This program will take in unlimited number of persons with birthdays and will stop when it finds two matching birthdays.");
@@ -28,13 +29,12 @@ namespace BirthdayMatchAlgorithm
                 birthYear = SetBirthYear();
 
                 DateTime dateInput = new DateTime(birthYear, birthMonth, birthDay);
-                var match = _persons.Find(p => p.BirthDate == dateInput);
 
-                if (match != null)
+                var personQuery = CheckForBirthdayMatch(dateInput);
+
+                if (personQuery != null)
                 {
-                    PersonModel p = match;
-                    Console.WriteLine($"There is a match! The date you just entered matched with Person Id:{p.Id} with a birthday of {p.BirthDate.ToShortDateString()}");
-                    Console.WriteLine($"It took {i} tries to find a match. ");
+                    Console.WriteLine(DisplayMatch(personQuery, i));
                     break;
                 }
 
@@ -131,5 +131,28 @@ namespace BirthdayMatchAlgorithm
             return result;
         }
 
+        public static PersonModel CheckForBirthdayMatch(DateTime inputtedDate)
+        {
+            var personQuery = _persons.Find(p => p.BirthDate == inputtedDate);
+
+            if (personQuery != null)
+            {
+                return personQuery;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static string DisplayMatch(PersonModel matchedPerson, int iterations)
+        {
+            string output;
+
+            PersonModel p = matchedPerson;
+
+            return output = ($"There is a match! The date you just entered matched with Person Id: {p.Id} with a birthday of {p.BirthDate.ToShortDateString()}\n" +
+                $"It took {iterations} tries to find a match.");
+        }
     }
 }
