@@ -20,15 +20,7 @@ namespace BirthdayMatchAlgorithm
 
             for (int i = 1; i == i; i++)
             {
-                int birthMonth;
-                int birthDay;
-                int birthYear;
-
-                birthMonth = SetBirthMonth();
-                birthDay = SetBirthDay();
-                birthYear = SetBirthYear();
-
-                DateTime dateInput = new DateTime(birthYear, birthMonth, birthDay);
+                DateTime dateInput = SetDateInput();
 
                 var personQuery = CheckForBirthdayMatch(dateInput);
 
@@ -40,6 +32,7 @@ namespace BirthdayMatchAlgorithm
 
                 PersonModel person = new PersonModel(i, dateInput);
                 _persons.Add(person);
+
                 Console.WriteLine("No match was found. Press enter to continue and add another person.");
             }
 
@@ -129,6 +122,15 @@ namespace BirthdayMatchAlgorithm
             } while (!success);
 
             return result;
+        }
+
+        public static DateTime SetDateInput()
+        {
+            int birthMonth = SetBirthMonth();
+            int birthDay = SetBirthDay();
+            int birthYear = SetBirthYear();
+
+            return new DateTime(birthYear, birthMonth, birthDay);
         }
 
         public static PersonModel CheckForBirthdayMatch(DateTime inputtedDate)
