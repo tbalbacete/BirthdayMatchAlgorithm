@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirthdayMatchAlgorithm", "BirthdayMatchAlgorithm\BirthdayMatchAlgorithm.csproj", "{DD04F080-DA4B-4B5B-9734-3ACC6E582875}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD04F080-DA4B-4B5B-9734-3ACC6E582875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD04F080-DA4B-4B5B-9734-3ACC6E582875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD04F080-DA4B-4B5B-9734-3ACC6E582875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD04F080-DA4B-4B5B-9734-3ACC6E582875}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA6CE38E-19FC-4A78-9BF4-E5615D9481B3}
+	EndGlobalSection
+EndGlobal
